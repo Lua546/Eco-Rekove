@@ -273,58 +273,6 @@ header.scrolled {
     color: var(--primary-green);
 }
 
-.team-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.team-member {
-    width: 220px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--radius);
-    background-color: var(--very-light-green);
-    box-shadow: var(--shadow);
-}
-
-.team-photo {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.team-info {
-    padding: 20px;
-    background-color: var(--white);
-    transition: var(--transition);
-}
-
-.team-member:hover .team-info {
-    background-color: var(--light-green);
-    color: var(--white);
-}
-
-.team-name {
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: var(--primary-green);
-}
-
-.team-role {
-    font-size: 0.9rem;
-    color: var(--dark);
-    opacity: 0.8;
-}
-
-/* Catalog Section */
-#catalog {
-  background-color: var(--white);
-    
-}
-
 .catalog-filter {
     display: flex;
     justify-content: center;
