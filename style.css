@@ -297,9 +297,17 @@ header.scrolled {
 }
 
 .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
+    display: flex;
+    overflow-x: auto;
+    /* grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); */
+    gap: 20px;
+    padding-bottom: 1rem;  
+}
+
+.product-card{
+    flex: 0 0 auto; 
+    width: 280px;
+    scroll-snap-align: start;
 }
 
 .product-image{
@@ -308,6 +316,23 @@ header.scrolled {
     height: 250px;
     object-fit: cover;
 }
+
+/* Para pantallas medianas y grandes (≥768px): usamos grid */
+@media (min-width: 768px) {
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      overflow-x: unset; /* Quitamos scroll horizontal */
+      overflow-y: scroll;
+      max-height: calc((300px + 20px) * 2);
+    }
+  
+    .product-card {
+      width: 100%; /* El grid se encarga del tamaño ahora */
+      scroll-snap-align: unset; /* Ya no se necesita snap */
+    }
+  }
 
 /* Testimonials Section */
 #testimonials {
