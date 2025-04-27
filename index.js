@@ -176,6 +176,7 @@ $(document).ready(function() {
     // CSV URL
     const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQMvSPsTHrtLGF_Be8n7eRKOAGZxKhanAFsOGUYRUzuCi4lG2fDpb-QjL9tr4FF2yyE6cB8qS8y44SP/pub?gid=0&single=true&output=csv";
     const CATEGORY_MAP = {
+      "hojas": "papers",
       "libretas": "notebooks",
       "lapices": "pencils",
       "sets": "sets"
