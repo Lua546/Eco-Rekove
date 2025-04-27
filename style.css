@@ -194,7 +194,7 @@ header.scrolled {
 
 .btn {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 10px 15px;
     background-color: var(--secondary-green);
     color: white;
     text-decoration: none;
@@ -296,13 +296,52 @@ header.scrolled {
     color: var(--white);
 }
 
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-green);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    padding: 6.0px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 2;
+    transition: background-color 0.3s;
+    width: 40px;
+}
+
+.arrow:hover {
+    background-color: #276749; /* Un verde más oscuro al pasar el mouse */
+}
+
+.left-arrow {
+    left: -20px;
+}
+
+.right-arrow {
+    right: -20px; 
+}
+
 .products-grid {
     display: flex;
     overflow-x: auto;
-    /* grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); */
     gap: 20px;
-    padding-bottom: 1rem;  
+    padding-bottom: 1rem;
+    scroll-behavior: smooth; /* <--- Importante para desplazamiento suave */
+    perspective: 1000px;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 1rem;
+    padding: 20px 15px;
 }
+
 
 .product-card{
     flex: 0 0 auto; 
@@ -318,21 +357,21 @@ header.scrolled {
 }
 
 /* Para pantallas medianas y grandes (≥768px): usamos grid */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .products-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 30px;
-      overflow-x: unset; /* Quitamos scroll horizontal */
+      overflow-x: unset;
       overflow-y: scroll;
       max-height: calc((300px + 20px) * 2);
     }
   
     .product-card {
-      width: 100%; /* El grid se encarga del tamaño ahora */
-      scroll-snap-align: unset; /* Ya no se necesita snap */
+      width: 100%;
+      scroll-snap-align: unset;
     }
-  }
+  } */
 
 /* Testimonials Section */
 #testimonials {

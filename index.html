@@ -52,19 +52,26 @@
 
     <!-- Catalog Section -->
     <section id="catalog">
-      <div class="container">
-        <h2 class="section-title">Nuestro Catálogo</h2>
-        <div class="catalog-filter">
+        <div class="container">
+          <h2 class="section-title">Nuestro Catálogo</h2>
+          <div class="catalog-filter">
             <button class="filter-btn active" data-filter="all">Todos</button>
             <button class="filter-btn" data-filter="notebooks">Libretas</button>
             <button class="filter-btn" data-filter="pencils">Lápices</button>
             <button class="filter-btn" data-filter="sets">Sets</button>
+          </div>
+      
+          <!-- Flechas -->
+          <div class="carousel-wrapper">
+            <button class="carousel-nav left-arrow" id="left-arrow">&#10094;</button> <!-- « -->
+            <div class="products-grid" id="products-grid">
+              <!-- Aquí van las product-cards dinámicamente -->
+            </div>
+            <button class="carousel-nav right-arrow" id="right-arrow">&#10095;</button> <!-- » -->
+          </div>
         </div>
-        <div class="products-grid" id="products-grid">
-          <!-- static cards removed -->
-        </div>
-      </div>
-    </section>
+      </section>
+      
 
     <!-- About Section -->
     <section id="about">

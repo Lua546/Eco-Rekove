@@ -60,6 +60,34 @@ $(document).ready(function() {
         }
     });
 
+    // Carrusel 3d de productos
+    const grid = document.getElementById('products-grid');
+  const leftArrow = document.getElementById('left-arrow');
+  const rightArrow = document.getElementById('right-arrow');
+  const cards = document.querySelectorAll('.product-card');
+
+  const scrollAmount = 300; // píxeles que se moverá cada vez
+
+  leftArrow.addEventListener('click', () => {
+    grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  rightArrow.addEventListener('click', () => {
+    grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+
+  grid.addEventListener('scroll', () => {
+    const gridCenter = grid.scrollLeft + grid.clientWidth / 2;
+
+    cards.forEach(card => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const distance = gridCenter - cardCenter;
+      const rotate = distance / 20;
+
+      card.style.transform = `rotateY(${rotate}deg)`;
+    });
+  });
+
     // Testimonial Carousel
     let currentSlide = 0;
     const slides = $(".testimonial-slide");
@@ -175,10 +203,16 @@ $(document).ready(function() {
             <p class="product-price">${p.precio}</p>
             <p class="product-description">${p.descripcion}</p>
             <div class="product-actions">
-              <a href="javascript:void(0)" class="btn btn-whatsapp">
+              <a href="${p.whatsapp}"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-whatsapp">
                 <i class="fab fa-whatsapp"></i> WhatsApp
               </a>
-              <a href="javascript:void(0)" class="btn btn-instagram">
+              <a href="${p.instagram}"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-instagram">
                 <i class="fab fa-instagram"></i> Instagram
               </a>
             </div>
